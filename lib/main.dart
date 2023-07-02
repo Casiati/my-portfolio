@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/domain/colors.dart';
+import 'package:my_portfolio/custons/colors.dart';
 import 'pages/homepage.dart';
 
 void main() {

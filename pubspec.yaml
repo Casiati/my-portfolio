@@ -60,6 +60,10 @@ flutter:
 
   assets:
    - assets/instagram.png
+   - assets/linkedin.png
+   - assets/github.png
+   - assets/flag-us.png
+   - assets/flag-brazil.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

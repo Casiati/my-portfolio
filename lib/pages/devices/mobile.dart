@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/domain/colors.dart';
-import 'package:my_portfolio/domain/icons.dart';
+import 'package:my_portfolio/custons/button.dart';
+import 'package:my_portfolio/custons/colors.dart';
+import 'package:my_portfolio/custons/bto_bio.dart';
 import 'package:my_portfolio/domain/person.dart';
 
 class MobileDesigner extends StatelessWidget {
-  MobileDesigner({super.key});
+  MobileDesigner({
+    super.key,
+  });
 
   final Person person = Person();
   final CustomColors customColors = CustomColors();
@@ -34,9 +37,41 @@ class MobileDesigner extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [CustomAssetImg('assets/instagram.png')],
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      CustomAssetBto(
+                        onPressed: () {
+                          //TODO: Navegação para o instagram.
+                        },
+                        iconImg: 'assets/instagram.png',
+                      ),
+                      CustomAssetBto(
+                        onPressed: () {
+                          //TODO: Navegação para o linkedin.
+                        },
+                        iconImg: 'assets/linkedin.png',
+                      ),
+                      CustomAssetBto(
+                        onPressed: () {
+                          //TODO: Navegação para o github.
+                        },
+                        iconImg: 'assets/github.png',
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: CustomButton(
+                    text: 'CONTACTE ME',
+                    icon: Icons.mail_outline,
+                    onTap: () {
+                      //TODO: Navegação pra email
+                    },
+                  ),
                 )
               ],
             ),
