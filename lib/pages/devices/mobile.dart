@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/custons/button.dart';
 import 'package:my_portfolio/custons/colors.dart';
 import 'package:my_portfolio/custons/bto_bio.dart';
+import 'package:my_portfolio/custons/education_view.dart';
+import 'package:my_portfolio/custons/language_view.dart';
 import 'package:my_portfolio/domain/person.dart';
 
 class MobileDesigner extends StatelessWidget {
@@ -17,7 +19,7 @@ class MobileDesigner extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
           child: Center(
             child: Column(
               children: [
@@ -66,13 +68,36 @@ class MobileDesigner extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   child: CustomButton(
-                    text: 'CONTACTE ME',
+                    text: 'CONTACT ME',
                     icon: Icons.mail_outline,
                     onTap: () {
                       //TODO: Navegação pra email
                     },
                   ),
-                )
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: Text('Languages'),
+                ),
+                const LanguageView(
+                  img: 'assets/flag-us.png',
+                  text: 'EN - Advanced',
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const LanguageView(
+                  img: 'assets/flag-brazil.png',
+                  text: 'PT-BR Native Speaker',
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(24.0),
+                  child: Text('Education'),
+                ),
+                const EducationView(
+                    text1: '🎓',
+                    text2:
+                        'Faculdade São Francisco de Assis - ANÁLISE E DESENVOLVIMENTO DE SISTEMAS')
               ],
             ),
           ),
