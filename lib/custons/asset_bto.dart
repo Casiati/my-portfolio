@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/custons/colors.dart';
 
 class CustomAssetBto extends StatelessWidget {
-  CustomAssetBto({Key? key, required this.iconImg, this.onPressed})
+  CustomAssetBto({Key? key, required this.iconImg, this.onPressed, this.width})
       : super(key: key);
 
   final String iconImg;
   final VoidCallback? onPressed;
   final CustomColors customColors = CustomColors();
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +19,13 @@ class CustomAssetBto extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 2),
-          height: 50,
-          width: 50,
+          height: (width != null) ? width! * 0.03 : 50,
+          width: (width != null) ? width! * 0.03 : 50,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color: customColors.border),
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: EdgeInsets.all((width != null) ? width! * 0.008 : 15),
             child: Image.asset(
               fit: BoxFit.cover,
               iconImg,

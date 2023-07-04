@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/custons/button.dart';
 import 'package:my_portfolio/custons/colors.dart';
-import 'package:my_portfolio/custons/bto_bio.dart';
+import 'package:my_portfolio/custons/asset_bto.dart';
 import 'package:my_portfolio/custons/education_view.dart';
 import 'package:my_portfolio/custons/language_view.dart';
+import 'package:my_portfolio/custons/url_lanucher.dart';
 import 'package:my_portfolio/domain/person.dart';
 
 class MobileDesigner extends StatelessWidget {
   MobileDesigner({
     super.key,
+    required this.width,
   });
 
   final Person person = Person();
   final CustomColors customColors = CustomColors();
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +49,19 @@ class MobileDesigner extends StatelessWidget {
                     children: [
                       CustomAssetBto(
                         onPressed: () {
-                          //TODO: Navegação para o instagram.
+                          UrlLauncher.launchLink(person.instagramLink);
                         },
                         iconImg: 'assets/instagram.png',
                       ),
                       CustomAssetBto(
                         onPressed: () {
-                          //TODO: Navegação para o linkedin.
+                          UrlLauncher.launchLink(person.linkedinLink);
                         },
                         iconImg: 'assets/linkedin.png',
                       ),
                       CustomAssetBto(
                         onPressed: () {
-                          //TODO: Navegação para o github.
+                          UrlLauncher.launchLink(person.gitHubLink);
                         },
                         iconImg: 'assets/github.png',
                       ),
@@ -71,7 +74,7 @@ class MobileDesigner extends StatelessWidget {
                     text: 'CONTACT ME',
                     icon: Icons.mail_outline,
                     onTap: () {
-                      //TODO: Navegação pra email
+                      UrlLauncher.launchLink('mailto:${person.mail}');
                     },
                   ),
                 ),
@@ -79,14 +82,18 @@ class MobileDesigner extends StatelessWidget {
                   padding: EdgeInsets.all(15.0),
                   child: Text('Languages'),
                 ),
-                const LanguageView(
+                LanguageView(
+                  width: width,
+                  isDesktop: false,
                   img: 'assets/flag-us.png',
                   text: 'EN - Advanced',
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const LanguageView(
+                LanguageView(
+                  width: width,
+                  isDesktop: false,
                   img: 'assets/flag-brazil.png',
                   text: 'PT-BR Native Speaker',
                 ),
@@ -94,10 +101,13 @@ class MobileDesigner extends StatelessWidget {
                   padding: EdgeInsets.all(24.0),
                   child: Text('Education'),
                 ),
-                const EducationView(
-                    text1: '🎓',
-                    text2:
-                        'Faculdade São Francisco de Assis - ANÁLISE E DESENVOLVIMENTO DE SISTEMAS')
+                EducationView(
+                  width: width,
+                  isDesktop: false,
+                  text1: '🎓',
+                  text2:
+                      'Faculdade São Francisco de Assis - ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+                ),
               ],
             ),
           ),
