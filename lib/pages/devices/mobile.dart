@@ -27,9 +27,12 @@ class MobileDesigner extends StatelessWidget {
             child: Column(
               children: [
                 Text('Hi, I\'m ${person.name} 👋'),
-                Text(
-                  person.description,
-                  style: const TextStyle(fontSize: 13),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(textAlign: TextAlign.center,
+                    person.description,
+                    style: const TextStyle(fontSize: 13,color: Colors.grey,),
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.all(8),
@@ -46,13 +49,13 @@ class MobileDesigner extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CustomAssetBto(
-                        onPressed: () {
-                          UrlLauncher.launchLink(person.instagramLink);
-                        },
-                        iconImg: 'assets/instagram.png',
-                      ),
+                    children: <Widget>[
+                      // CustomAssetBto(
+                      //   onPressed: () {
+                      //     UrlLauncher.launchLink(person.instagramLink);
+                      //   },
+                      //   iconImg: 'assets/instagram.png',
+                      // ),
                       CustomAssetBto(
                         onPressed: () {
                           UrlLauncher.launchLink(person.linkedinLink);

@@ -40,11 +40,16 @@ class DesktopBio extends StatelessWidget {
                     'Hi, I\'m ${person.name} 👋',
                     style: TextStyle(fontSize: width * 0.018),
                   ),
-                  Text(
-                    person.description,
-                    style: TextStyle(
-                      fontSize: width * 0.01,
-                      color: Colors.grey,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(width: width * 0.2, 
+                      child: Text(textAlign: TextAlign.center,
+                        person.description, overflow: TextOverflow.visible,
+                        style: TextStyle(
+                          fontSize: width * 0.01,
+                          color: Colors.grey,
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -54,13 +59,13 @@ class DesktopBio extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        CustomAssetBto(
-                          width: width,
-                          onPressed: () {
-                            UrlLauncher.launchLink(person.instagramLink);
-                          },
-                          iconImg: 'assets/instagram.png',
-                        ),
+                        // CustomAssetBto(
+                        //   width: width,
+                        //   onPressed: () {
+                        //     UrlLauncher.launchLink(person.instagramLink);
+                        //   },
+                        //   iconImg: 'assets/instagram.png',
+                        // ),
                         CustomAssetBto(
                           width: width,
                           onPressed: () {
