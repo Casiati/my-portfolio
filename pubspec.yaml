@@ -69,6 +69,11 @@ flutter:
    - assets/github.png
    - assets/flag-us.png
    - assets/flag-brazil.png
+   - assets/nubank_clone/img1.png
+   - assets/nubank_clone/img2.png
+   - assets/nubank_clone/img3.png
+   - assets/nubank_clone/img4.png
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

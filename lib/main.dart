@@ -21,11 +21,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CustomColors customColors = CustomColors();
+    MediaQueryData deviceInfo = MediaQuery.of(context);
+    final double width = deviceInfo.size.width;
     return MaterialApp(
       title: 'My Portifolio',
       theme: ThemeData(
         scaffoldBackgroundColor: customColors.background,
         textTheme: TextTheme(
+          displayLarge:  TextStyle(fontSize: width * 0.020, fontWeight: FontWeight.bold, color: Colors.white), // h1
+          displayMedium:  TextStyle(fontSize: width * 0.021, fontWeight: FontWeight.bold, color: Colors.white), // h2
+          bodyLarge:  TextStyle(fontSize: width * 0.015, color: Colors.white), // body text
           bodyMedium: TextStyle(
               color: customColors.font,
               fontStyle: FontStyle.italic,
@@ -33,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: HomePage(deviceInfo: deviceInfo,),
     );
   }
 }
