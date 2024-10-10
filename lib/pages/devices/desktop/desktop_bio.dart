@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/custons/asset_bto.dart';
 import 'package:my_portfolio/custons/button.dart';
 import 'package:my_portfolio/custons/circular_avatar_with_border.dart';
-import 'package:my_portfolio/custons/colors.dart';
 import 'package:my_portfolio/custons/education_view.dart';
 import 'package:my_portfolio/custons/language_view.dart';
 import 'package:my_portfolio/custons/url_lanucher.dart';
@@ -13,7 +12,6 @@ class DesktopBio extends StatelessWidget {
 
   final double width;
   final Person person = Person();
-  final CustomColors customColors = CustomColors();
 
   @override
   Widget build(BuildContext context) {

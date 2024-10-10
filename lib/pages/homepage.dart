@@ -9,8 +9,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     MediaQueryData deviceInfo = MediaQuery.of(context);
 
+    final List<Widget> pages = [
+    const Center(child: Text('Page 1 Content')),
+    const Center(child: Text('Page 2 Content')),
+    const Center(child: Text('Page 3 Content')),
+  ];
+
     return (deviceInfo.orientation.toString() == 'Orientation.landscape')
-        ? DesktopDesigner(width: deviceInfo.size.width)
+        ? DesktopDesigner(width: deviceInfo.size.width, pages: pages,)
         : MobileDesigner(width: deviceInfo.size.width);
   }
 }

@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:my_portfolio/custons/colors.dart';
+import 'package:my_portfolio/domain/page_controller.dart';
+import 'package:provider/provider.dart';
 import 'pages/homepage.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => PageProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final CustomColors customColors = CustomColors();
     return MaterialApp(
-      title: '',
+      title: 'My Portifolio',
       theme: ThemeData(
         scaffoldBackgroundColor: customColors.background,
         textTheme: TextTheme(
