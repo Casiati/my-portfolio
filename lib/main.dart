@@ -28,17 +28,30 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: customColors.background,
         textTheme: TextTheme(
-          displayLarge:  TextStyle(fontSize: width * 0.020, fontWeight: FontWeight.bold, color: Colors.white), // h1
-          displayMedium:  TextStyle(fontSize: width * 0.021, fontWeight: FontWeight.bold, color: Colors.white), // h2
-          bodyLarge:  TextStyle(fontSize: width * 0.015, color: Colors.white), // body text
+          displayLarge: TextStyle(
+              fontSize: width * 0.020,
+              fontWeight: FontWeight.bold,
+              color: Colors.white), // h1
+          displayMedium: TextStyle(
+              fontSize: width * 0.017,
+              fontWeight: FontWeight.bold,
+              color: Colors.white), // h2
+          bodyLarge: TextStyle(
+              fontSize: width * 0.015, color: Colors.white), // body text
           bodyMedium: TextStyle(
-              color: customColors.font,
+              color: Colors.white,
               fontStyle: FontStyle.italic,
-              fontSize: 20),
+              fontSize: width * 0.013),
+          bodySmall: TextStyle(
+              color: Colors.grey,
+              fontStyle: FontStyle.italic,
+              fontSize: width * 0.011),
         ),
         useMaterial3: true,
       ),
-      home: HomePage(deviceInfo: deviceInfo,),
+      home: HomePage(
+        deviceInfo: deviceInfo,
+      ),
     );
   }
 }

@@ -36,17 +36,14 @@ class DesktopBio extends StatelessWidget {
                 children: [
                   Text(
                     'Hi, I\'m ${person.name} 👋',
-                    style: TextStyle(fontSize: width * 0.018),
+                    style: Theme.of(context).textTheme.displayLarge,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(width: width * 0.2, 
                       child: Text(textAlign: TextAlign.center,
                         person.description, overflow: TextOverflow.visible,
-                        style: TextStyle(
-                          fontSize: width * 0.01,
-                          color: Colors.grey,
-                        ),
+                        style: Theme.of(context).textTheme.bodySmall
                       ),
                     ),
                   ),
@@ -108,7 +105,7 @@ class DesktopBio extends StatelessWidget {
                     width: width * 0.3,
                     alignment: Alignment.bottomLeft,
                     child: Text('Languages',
-                        style: TextStyle(fontSize: width * 0.014)),
+                        style: Theme.of(context).textTheme.bodyLarge),
                   ),
                   const SizedBox(
                     height: 8,
@@ -135,7 +132,7 @@ class DesktopBio extends StatelessWidget {
                     width: width * 0.3,
                     alignment: Alignment.bottomLeft,
                     child: Text('Education',
-                        style: TextStyle(fontSize: width * 0.014)),
+                        style: Theme.of(context).textTheme.bodyLarge),
                   ),
                   EducationView(
                     width: width,

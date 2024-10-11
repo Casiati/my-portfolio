@@ -18,16 +18,17 @@ class HorizontalMenu extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Consumer<PageProvider>(
             builder: (context, pageProvider, child) {
-              return Container(
+              return Container(height: width * 0.03,
                 decoration: BoxDecoration(
                     gradient: gradient,
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     menuButton(pageProvider, 0, 'Nubank Clone', width),
-                    menuButton(pageProvider, 1, 'Projeto 2', width),
+                    menuButton(pageProvider, 1, 'Onde Assistir', width),
                     menuButton(pageProvider, 2, 'Projeto 3', width),
+                    menuButton(pageProvider, 3, 'Projeto 4', width),
                   ],
                 ),
               );
